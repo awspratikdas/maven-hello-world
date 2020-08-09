@@ -1,5 +1,11 @@
 def listProjectName = ["sample-dev", "sample-stage", "sample-prod"]
 
+def disableProj = [
+"sample-dev": true,
+    "sample-stage": false,
+    "sample-prod": true
+]
+
 listProjectName.eachWithIndex { projName, idx ->
 
 freeStyleJob(projName) {
@@ -11,6 +17,7 @@ freeStyleJob(projName) {
         numToKeep(5)
         daysToKeep(7)
     }
+    disabled(disableProj[projName])
     
     parameters {
         stringParam('env', '', 'enter the env name')

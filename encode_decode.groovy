@@ -5,8 +5,20 @@ job('Encode-Decode Groovy') {
         numToKeep(5)
         daysToKeep(7)
     }
-     
+    
     concurrentBuild(true)
+    
+    scm {
+        git {
+            remote {
+                
+                url('https://github.com/awspratikdas/jenkins-git-integration.git')
+                credentials('test')
+            }
+            
+            branch('master')
+        }
+    }
     
     wrappers {
         credentialsBinding {

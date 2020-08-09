@@ -1,7 +1,7 @@
 def listProjectName = ["dev", "stage", "prod"]
 
 def disableProj = [
-"dev": true,
+"dev": false,
     "stage": false,
     "prod": true
 ]
@@ -20,7 +20,7 @@ freeStyleJob(jobName) {
     disabled(disableProj[projName])
     
     parameters {
-        stringParam('env', '${projName}', 'enter the env name')
+        stringParam('env', "${projName}", 'enter the env name')
     }
     
     concurrentBuild(true)

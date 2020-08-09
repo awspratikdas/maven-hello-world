@@ -24,5 +24,8 @@ job('Encode-Decode Groovy') {
         credentialsBinding {
             string('MY_SECRET', 'India DevOps secret text')
         }
+        
+        timestamps()
+        colorizeOutput("css")
     }
 }

@@ -6,7 +6,7 @@ job('DSL_Test_Job_08122020'){
     }
      parameters {
         choiceParam('OPTION', ['option 1 (default)', 'option 2', 'option 3'])
-        stringParam('MY STRING PARAM', defaultValue = null, description = 'This is a DSL script generated string param')
+        stringParam('MY STRING PARAM', defaultValue = null, description = 'This is a dsl script generated string param')
     }
     scm {
         git {
@@ -23,8 +23,9 @@ job('DSL_Test_Job_08122020'){
 
 	steps {
 
-        shell ('echo ${JOB_NAME}>log1.txt')
-	    	  
-	}
+        shell ('echo ${JOB_NAME}>mylog.txt')
+	shell ('echo "Hello World!">log.txt')
+    	  
+    }
     
 }

@@ -9,6 +9,7 @@ job('DSL_Test_Job_08122020'){
         git {
             remote {
                 url('https://github.com/awspratikdas/jenkins-git-integration.git')
+		credentials('test')    
                    }
             branch('master')
         }

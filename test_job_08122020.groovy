@@ -24,8 +24,7 @@ job('DSL_Test_Job_08122020'){
 	steps {
 
         shell ('echo ${JOB_NAME}>log1.txt')
-	shell ('echo "Hello World!">log2.txt')
-    	  
+	    	  
 	}
     
 }

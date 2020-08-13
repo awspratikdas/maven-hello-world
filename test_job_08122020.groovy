@@ -11,6 +11,9 @@ job('DSL_Test_Job_08122020'){
                 url('https://github.com/awspratikdas/jenkins-git-integration.git')
 		credentials('test')    
                    }
+		extensions {
+                cleanAfterCheckout()
+                            }
             branch('master')
         }
     }

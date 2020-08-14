@@ -22,13 +22,13 @@ job('MyDSLJob_08132020'){
     }
    wrappers {
 	   
-        buildName('#${BUILD_NUMBER} on ${ENV,var="BRANCH"}')
+        buildName('JenkinsMaven#${BUILD_NUMBER}')
 	   
     }
 	steps {
 
-        shell ('echo ${JOB_NAME}>mylog.txt')
-	shell ('echo "Hello World!">log.txt')
+        shell ('echo ${JOB_NAME}>log.txt')
+	shell ('echo "Hello World!">>log.txt')
     	  
     }
     

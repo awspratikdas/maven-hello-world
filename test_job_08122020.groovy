@@ -18,6 +18,9 @@ job('MyDSLJob_08132020'){
                 cleanAfterCheckout()
                             }
             branch('master')
+		triggers {
+        	scm('5 * * * *')
+    		}
         }
     }
    wrappers {

@@ -1,4 +1,6 @@
 job('MyDSLJob_08132020'){
+	
+    concurrentBuild(true)
     
     logRotator {
         numToKeep(5)

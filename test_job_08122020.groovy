@@ -1,4 +1,4 @@
-job('DSL_Test_Job_08122020'){
+job('MyDSLJob_08132020'){
     
     logRotator {
         numToKeep(5)

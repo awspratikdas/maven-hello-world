@@ -20,7 +20,11 @@ job('MyDSLJob_08132020'){
             branch('master')
         }
     }
-
+   wrappers {
+	   
+        buildName('#${BUILD_NUMBER} on ${ENV,var="BRANCH"}')
+	   
+    }
 	steps {
 
         shell ('echo ${JOB_NAME}>mylog.txt')

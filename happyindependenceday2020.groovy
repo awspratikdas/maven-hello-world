@@ -35,7 +35,7 @@ freeStyleJob('WestCoast/jobName'){
         git {
             remote {
                 url gitURL1
-				credentials('test')    
+		credentials('test')    
                     }
             extensions {
                 cleanAfterCheckout()

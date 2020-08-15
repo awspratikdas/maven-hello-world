@@ -1,9 +1,9 @@
 def listProjectName = ['dev', 'stage', 'prod']
 
 def disableProj = [
-	"dev": false,
-    	"stage": true,
-    	"prod": true
+	"dev": true,
+    	"stage": false,
+    	"prod": false
 		  ]
 
 listProjectName.eachWithIndex {projName, index->

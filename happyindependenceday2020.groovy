@@ -19,15 +19,13 @@ freeStyleJob('jobName'){
     		}
     
     disabled(disableProj[projName])
+    concurrentBuild(true)
     label('master')
 	
         parameters {
         booleanParam('TESTING-BOOLEAN', true, 'uncheck to disable tests')
         choiceParam('OPTION', ['option 1 (default)', 'option 2', 'option 3'])
-        
-    	          }
-        
-        concurrentBuild(true)
+                  }   
         
         multiscm {
         git {

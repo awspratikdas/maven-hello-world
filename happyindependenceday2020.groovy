@@ -23,8 +23,8 @@ freeStyleJob('WestCoast/jobName'){
     disabled(disableProj[projName])
     
         parameters {
-        stringParam('env', "${projName}", 'enter the env name')    
-        booleanParam('RUN_TESTS', true, 'uncheck to disable tests')
+        stringParam('env', '','env-name:')     
+        booleanParam('TESTING-BOOLEAN', true, 'uncheck to disable tests')
         choiceParam('OPTION', ['option 1 (default)', 'option 2', 'option 3'])
         labelParam('master')
     	          }

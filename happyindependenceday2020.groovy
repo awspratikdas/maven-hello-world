@@ -11,7 +11,7 @@ listProjectName.eachWithIndex {projName, index->
 
 freeStyleJob('jobName'){
     
-    description('My DSL job created on India's Independence Day')
+    description('My DSL job created on India Independence Day')
     
     logRotator {
         daysToKeep(7)
@@ -54,4 +54,3 @@ freeStyleJob('jobName'){
         	 }
     	    }
         }
-   }

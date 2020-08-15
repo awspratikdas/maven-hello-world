@@ -4,9 +4,9 @@ def listProjectName = ["dev", "stage", "prod"]
 
 def disableProj = [
 	"dev": false,
-    "stage": true,
-    "prod": true
-]
+    	"stage": true,
+    	"prod": true
+		  ]
 
 listProjectName.eachWithIndex { projName, idx ->
     def jobName = "epmp_${projName}"

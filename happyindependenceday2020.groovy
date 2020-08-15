@@ -11,12 +11,12 @@ listProjectName.eachWithIndex {projName, index->
 
 freeStyleJob('jobName'){
     
-    description('My DSL job in Jenkins Groovy')
+    description('My DSL job created on India's Independence Day')
     
     logRotator {
         daysToKeep(7)
         numToKeep(5)
-    			}
+    		}
     
     disabled(disableProj[projName])
     label('master')

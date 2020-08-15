@@ -1,5 +1,3 @@
-def gitURL1 = "https://github.com/awspratikdas/jenkins-git-integration.git"
-def gitURL2 = "https://github.com/awspratikdas/devops_e2e_workflow.git"
 def listProjectName = ["dev", "stage", "prod"]
 
 def disableProj = [
@@ -23,7 +21,6 @@ freeStyleJob('WestCoast/jobName'){
     disabled(disableProj[projName])
     
         parameters {
-        stringParam('env', '','env-name:')     
         booleanParam('TESTING-BOOLEAN', true, 'uncheck to disable tests')
         choiceParam('OPTION', ['option 1 (default)', 'option 2', 'option 3'])
         labelParam('master')
@@ -34,7 +31,7 @@ freeStyleJob('WestCoast/jobName'){
         multiscm {
         git {
             remote {
-                url gitURL1
+                url('https://github.com/awspratikdas/jenkins-git-integration.git')
 		credentials('test')    
                     }
             extensions {
@@ -44,8 +41,8 @@ freeStyleJob('WestCoast/jobName'){
                        }
             branch('*/master')
             remote {
-                url gitURL2
-				   }
+                url('https://github.com/awspratikdas/devops_e2e_workflow.git')
+	           }
             extensions {
                 cleanAfterCheckout()
                 wipeOutWorkspace()

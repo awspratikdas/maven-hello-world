@@ -52,5 +52,10 @@ freeStyleJob(jobName) {
             branch('master')
 	   }
         	 }
+	wrappers {
+        credentialsBinding {
+            file('MYSECRETFILE', 'secretfile.txt')
+	                  }
+                 }
     	    }
         }

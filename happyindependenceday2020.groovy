@@ -6,10 +6,10 @@ def disableProj = [
     	"prod": true
 		  ]
 
-listProjectName.eachWithIndex { projName, idx ->
+listProjectName.eachWithIndex {projName, index->
     def jobName = "epmp_${projName}"
 
-freeStyleJob('WestCoast/jobName'){
+freeStyleJob('jobName'){
     
     description('My DSL job in Jenkins Groovy')
     
@@ -19,11 +19,12 @@ freeStyleJob('WestCoast/jobName'){
     			}
     
     disabled(disableProj[projName])
-    
+    label('master')
+	
         parameters {
         booleanParam('TESTING-BOOLEAN', true, 'uncheck to disable tests')
         choiceParam('OPTION', ['option 1 (default)', 'option 2', 'option 3'])
-        labelParam('master')
+        
     	          }
         
         concurrentBuild(true)
@@ -40,6 +41,8 @@ freeStyleJob('WestCoast/jobName'){
                 relativeTargetDirectory('IndiaSCM')
                        }
             branch('*/master')
+	   }
+	git {
             remote {
                 url('https://github.com/awspratikdas/devops_e2e_workflow.git')
 	           }
@@ -49,6 +52,7 @@ freeStyleJob('WestCoast/jobName'){
                 relativeTargetDirectory('HopeSCM')
                        }
             branch('*/master')
+	   }
         	 }
     	    }
         }

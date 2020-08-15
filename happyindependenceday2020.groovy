@@ -1,4 +1,4 @@
-def listProjectName = ["dev", "stage", "prod"]
+def listProjectName = ['dev', 'stage', 'prod']
 
 def disableProj = [
 	"dev": false,
@@ -9,7 +9,7 @@ def disableProj = [
 listProjectName.eachWithIndex {projName, index->
     def jobName = "epmp_${projName}"
 
-freeStyleJob('jobName'){
+freeStyleJob(jobName) {
     
     description('My DSL job created on India Independence Day')
     
@@ -38,7 +38,7 @@ freeStyleJob('jobName'){
                 wipeOutWorkspace()
                 relativeTargetDirectory('IndiaSCM')
                        }
-            branch('*/master')
+            branch('master')
 	   }
 	git {
             remote {
@@ -49,7 +49,7 @@ freeStyleJob('jobName'){
                 wipeOutWorkspace()
                 relativeTargetDirectory('HopeSCM')
                        }
-            branch('*/master')
+            branch('master')
 	   }
         	 }
     	    }

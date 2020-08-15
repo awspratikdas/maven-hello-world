@@ -53,6 +53,6 @@ freeStyleJob('WestCoast/jobName'){
                        }
             branch('*/master')
         	 }
-    	 }
-	  }
-  }
+    	    }
+        }
+   }

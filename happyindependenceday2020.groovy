@@ -9,9 +9,13 @@ def disableProj = [
 listProjectName.eachWithIndex {projName, index->
     def jobName = "epmp_${projName}"
 
-freeStyleJob(jobName) {
+folder('WestCoast') {
+    description('Contains all jobs related to DSL_Job_08152020')
+}    
     
-    description('My DSL job created on India Independence Day')
+job('WestCoast/$(jobName)') {
+    
+    description('My DSL job created on MS Dhoni Retirement Day')
     
     logRotator {
         daysToKeep(7)
@@ -28,7 +32,7 @@ freeStyleJob(jobName) {
                   }   
         
         multiscm {
-        git {
+            git {
             remote {
                 url('https://github.com/awspratikdas/jenkins-git-integration.git')
 		credentials('test')    
@@ -40,7 +44,7 @@ freeStyleJob(jobName) {
                        }
             branch("*/master")
 	   }
-	git {
+	    git {
             remote {
                 url('https://github.com/awspratikdas/devops_e2e_workflow.git')
 	           }
@@ -71,4 +75,4 @@ freeStyleJob(jobName) {
                            }
                     }
     	   }
-        }
+      }

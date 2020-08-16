@@ -8,12 +8,14 @@ def disableProj = [
 
 listProjectName.eachWithIndex {projName, index->
     def jobName = "epmp_${projName}"
+	
+	def folderName = 'WestCoast'
 
-folder('WestCoast') {
+folder(folderName) {
     description('Contains all jobs related to DSL_Job_08152020')
 }    
     
-freeStyleJob(jobName) {
+freeStyleJob(folderName+"/"+jobName) {
     
     description('DSL job dedicated to MS Dhoni')
     
@@ -42,7 +44,7 @@ freeStyleJob(jobName) {
                 wipeOutWorkspace()
                 relativeTargetDirectory('IndiaSCM')
                        }
-            branch("*/master")
+            branch('master')
 	   }
 	    git {
             remote {
@@ -53,7 +55,7 @@ freeStyleJob(jobName) {
                 wipeOutWorkspace()
                 relativeTargetDirectory('HopeSCM')
                        }
-            branch("*/master")
+            branch('master')
 	   }
         	 }
 	wrappers {

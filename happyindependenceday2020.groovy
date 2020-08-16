@@ -69,6 +69,7 @@ freeStyleJob(jobName) {
              }
 	 publishers {
            archiveArtifacts {
+            	pattern('build/test-output/**/*.html')
             	pattern('build/test-output/**/*.xml')
             	onlyIfSuccessful()
                            }

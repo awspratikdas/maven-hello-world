@@ -38,7 +38,7 @@ freeStyleJob(jobName) {
                 wipeOutWorkspace()
                 relativeTargetDirectory('IndiaSCM')
                        }
-            branch('master')
+            branch("*/master")
 	   }
 	git {
             remote {
@@ -49,7 +49,7 @@ freeStyleJob(jobName) {
                 wipeOutWorkspace()
                 relativeTargetDirectory('HopeSCM')
                        }
-            branch('master')
+            branch("*/master")
 	   }
         	 }
 	wrappers {

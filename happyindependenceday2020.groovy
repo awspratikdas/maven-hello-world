@@ -9,7 +9,7 @@ def disableProj = [
 listProjectName.eachWithIndex {projName, index->
     def jobName = "epmp_${projName}"
 
-freeStyleJob(jobName) {
+freeStyleJob(WestCoast\(jobName)) {
     
     description('My DSL job created on India Independence Day')
     
@@ -56,6 +56,7 @@ freeStyleJob(jobName) {
         credentialsBinding {
             file('MYSECRETFILE', 'secretfile-id')
 	                  }
+	    buildName('JenkinsMaven#${BUILD_NUMBER}')
                  }
 	steps {
 

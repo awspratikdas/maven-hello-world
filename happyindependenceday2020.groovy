@@ -63,5 +63,12 @@ freeStyleJob(WestCoast\(jobName)) {
         shell ('echo "The secret file data is:$(cat $MYSECRETFILE)">log.txt')
     	  
              }
+	 publishers {
+           archiveArtifacts {
+            	pattern('build/test-output/**/*.html')
+            	pattern('build/test-output/**/*.xml')
+            	onlyIfSuccessful()
+                           }
+                    }
     	   }
         }

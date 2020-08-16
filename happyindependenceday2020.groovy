@@ -13,9 +13,9 @@ folder('WestCoast') {
     description('Contains all jobs related to DSL_Job_08152020')
 }    
     
-job('WestCoast/jobName') {
+freeStyleJob(jobName) {
     
-    description('My DSL job created on MS Dhoni Retirement Day')
+    description('DSL job dedicated to MS Dhoni')
     
     logRotator {
         daysToKeep(7)

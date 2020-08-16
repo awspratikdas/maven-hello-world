@@ -54,7 +54,7 @@ freeStyleJob(jobName) {
         	 }
 	wrappers {
         credentialsBinding {
-            file('MYSECRETFILE', 'secretfile.txt')
+            file('MYSECRETFILE', 'secretfile-id')
 	                  }
                  }
 	steps {

@@ -13,7 +13,7 @@ folder('WestCoast') {
     description('Contains all jobs related to DSL_Job_08152020')
 }    
     
-job('WestCoast/$(jobName)') {
+job('WestCoast/jobName)') {
     
     description('My DSL job created on MS Dhoni Retirement Day')
     

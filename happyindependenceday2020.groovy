@@ -9,7 +9,7 @@ def disableProj = [
 listProjectName.eachWithIndex {projName, index->
     def jobName = "epmp_${projName}"
 
-freeStyleJob(WestCoast\(jobName)) {
+freeStyleJob(jobName) {
     
     description('My DSL job created on India Independence Day')
     

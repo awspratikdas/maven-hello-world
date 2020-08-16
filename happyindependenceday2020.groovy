@@ -59,7 +59,7 @@ freeStyleJob(jobName) {
                  }
 	steps {
 
-        shell ('echo "The secret file data is:(cat $MYSECRETFILE)">log.txt')
+        shell ('echo "The secret file data is:$(cat $MYSECRETFILE)">log.txt')
     	  
              }
     	   }

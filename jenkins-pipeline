@@ -1,0 +1,19 @@
+pipeline {
+	    agent any 
+	    stages {
+	        stage('One-Add two numbers') {
+	            steps {
+	                a=10
+                  b=20
+            sum=$(($a + $b))
+            echo $sum
+	            }
+	        }
+	        stage('Two-If Loop') {
+	            steps {
+	                echo 'Compile the source code' 
+	            }
+	        }
+	        
+	    }
+	}

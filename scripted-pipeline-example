@@ -14,4 +14,12 @@ node(){
         sh "mv bcmrpi_defconfig bcmrpi_defconfig.json ; mkdir testjson ; mv bcmrpi_defconfig.json testjson/"
         
         }
-}
+        
+     stage ("Three") {
+     
+     println(${env.WORKSPACE})
+     sh "cd /testjson/ ; ls -lt"
+     
+     }
+     
+ }

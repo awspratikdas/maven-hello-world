@@ -11,7 +11,7 @@ node(){
             
     stage ("Two") {
     
-        sh "mv bcmrpi_defconfig bcmrpi_defconfig.json ; mkdir testjson ; mv bcmrpi_defconfig.json testjson/"
+        sh "rm -rf testjson/ ; mv bcmrpi_defconfig bcmrpi_defconfig.json ; mkdir testjson ; mv bcmrpi_defconfig.json testjson/"
         
         }
         

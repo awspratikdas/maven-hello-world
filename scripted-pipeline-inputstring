@@ -2,11 +2,7 @@ properties([[$class: 'JiraProjectProperty'], gitLabConnection(''), [$class: 'Git
 	 
 node(){
 
-	environment {
-                w = "5" 	
-                    }
-
-	  stage("1-Add two numbers") {
+	stage("1-Add two numbers") {
 		
 	echo "select the first number ${params.StringA}"
 	echo "select the second number ${params.StringB}"
@@ -22,7 +18,11 @@ node(){
 	  
 	  stage("2-If Loop") {
 	  
-	  if (z > w.toInteger()) {
+	  environment {
+                def w = 5 	
+                      }
+	  
+	  if (z > w) {
                 echo 'The Build is a Stable'
             } else {
                 echo 'The Build is UnStable'

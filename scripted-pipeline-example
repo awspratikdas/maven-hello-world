@@ -17,7 +17,10 @@ node(){
         
      stage ("Three") {
      
-     sh "cd testjson ; ls -al"
+     dir("${env.WORKSPACE}/testjson"){
+                 sh "pwd"
+                                   }
+     sh "ls -al"
      
                      }
      

@@ -22,7 +22,7 @@ node(){
 	  
 	  stage("2-If Loop") {
 	  
-	  if (z > 5) {
+	  if (z > ${env.w}) {
                 echo 'The Build is a Stable'
             } else {
                 echo 'The Build is UnStable'

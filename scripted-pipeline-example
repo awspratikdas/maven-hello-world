@@ -2,16 +2,17 @@ node(){
 
     stage ("One") {
     
-    steps {
+    try {
                 retry(5) {
         sh "wget https://raw.githubusercontent.com/raspberrypi/linux/rpi-4.9.y/arch/arm/configs/bcmrpi_defconfig"
                          }
-            }
+             }
+        
+        }
             
     stage ("Two") {
     
         sh "mv bcmrpi_defconfig bcmrpi_defconfig.json ; mkdir testjson ; mv bcmrpi_defconfig.json testjson/"
         
         }
-    }
 }

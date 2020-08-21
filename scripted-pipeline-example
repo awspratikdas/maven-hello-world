@@ -1,0 +1,7 @@
+node () {
+
+    stage ('One') {
+        sh "https://raw.githubusercontent.com/raspberrypi/linux/rpi-4.9.y/arch/arm/configs/bcmrpi_defconfig"
+    }
+
+}

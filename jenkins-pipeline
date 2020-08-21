@@ -1,13 +1,10 @@
-pipeline {
-	    agent any 
-	    stages {
-	        stage('1-Add two numbers') {
+node() {
+	    stage("1-Add two numbers") {
 		
 	def x = 5; 
 	def y = 15;
 	z = x + y;
 	echo "${z}"
             }
-	     
-	  }
+	    
 	}

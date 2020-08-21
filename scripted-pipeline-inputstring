@@ -10,7 +10,7 @@ node(){
 		
 	echo "select the first number ${params.StringA}"
 	echo "select the second number ${params.StringB}"
-	z = ${StringA} + ${StringB};
+	z = ${env.StringA} + ${env.StringB};
 	
 	echo "${z}"
             

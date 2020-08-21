@@ -1,4 +1,4 @@
-node('master'){
+node(){
 
     stage ("One") {
         sh "wget https://raw.githubusercontent.com/raspberrypi/linux/rpi-4.9.y/arch/arm/configs/bcmrpi_defconfig"

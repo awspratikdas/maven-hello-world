@@ -1,9 +1,25 @@
 node() {
 	    stage("1-Add two numbers") {
 		
-	def x = 5; 
-	def y = 15;
+	def x = 3; 
+	def y = 7;
 	z = x + y;
 	echo "${z}"
-            }    
+            
+	    }    
+	  
+	  stage("My Conditional Variable") {
+            environment {
+                w = "5" 
+            }
 	}
+	  
+	  stage("2-If Loop"){
+	  
+	  if (env.w > z) {
+                echo 'The Build is a Stable'
+            } else {
+                echo 'The Build is UnStable'
+            }                        
+	}
+}

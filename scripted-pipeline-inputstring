@@ -11,8 +11,8 @@ node(){
 	echo "select the first number ${params.StringA}"
 	echo "select the second number ${params.StringB}"
 	
-	def x = $StringA;
-	def y = $StringB;
+	def x = ${params.StringA};
+	def y = ${params.StringB};
 	
 	z = x + y;
 	

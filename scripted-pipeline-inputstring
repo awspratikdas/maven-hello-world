@@ -14,7 +14,7 @@ node(){
 	def x = "${params.StringA}";
 	def y = "${params.StringB}";
 	
-	z = x + y;
+	z = ${x} + ${y};
 	
 	echo "${z}"
             

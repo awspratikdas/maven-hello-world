@@ -1,9 +1,12 @@
+properties([[$class: 'JiraProjectProperty'], gitLabConnection(''), [$class: 'GitlabLogoProperty', repositoryName: ''], giteeConnection(''), [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false], parameters([string(defaultValue: '3', description: '', name: 'StringA', trim: false), string(defaultValue: '4', description: '', name: 'StringB', trim: false)]), pipelineTriggers([githubPush()])])
+	 
 node(){
 	  stage("1-Add two numbers") {
 		
-	def x = 3; 
-	def y = 7;
-	z = x + y;
+	echo "select the first number ${params.StringA}"
+	echo "select the second number ${params.StringB}"
+	z = ${params.StringA} + ${params.StringB};
+	
 	echo "${z}"
             
 	    }    
@@ -20,4 +23,4 @@ node(){
                 echo 'The Build is UnStable'
             }                        
 	}
-}
+    }

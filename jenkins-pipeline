@@ -14,7 +14,7 @@ node() {
                 w = "5" 
             }
 	  
-	  if (env.w > z) {
+	  if (z > env.w) {
                 echo 'The Build is a Stable'
             } else {
                 echo 'The Build is UnStable'

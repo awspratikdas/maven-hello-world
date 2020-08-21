@@ -5,6 +5,5 @@ node() {
 	def y = 15;
 	z = x + y;
 	echo "${z}"
-            }
-	    
+            }    
 	}

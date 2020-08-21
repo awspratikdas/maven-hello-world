@@ -3,14 +3,18 @@ properties([[$class: 'JiraProjectProperty'], gitLabConnection(''), [$class: 'Git
 node(){
 
 	environment {
-                w = "5" 
-            }
+                w = "5" 	
+                    }
 
 	  stage("1-Add two numbers") {
 		
 	echo "select the first number ${params.StringA}"
 	echo "select the second number ${params.StringB}"
-	z = ${env.StringA} + ${env.StringB};
+	
+	def x = ${StringA};
+	def y = ${StringB};
+	
+	z = x + y;
 	
 	echo "${z}"
             

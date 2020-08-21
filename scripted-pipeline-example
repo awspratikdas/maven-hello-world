@@ -18,8 +18,7 @@ node(){
      stage ("Three") {
      
      println(${env.WORKSPACE})
-     sh "cd /testjson/ ; ls -lt"
      
-     }
+                     }
      
- }
+      }

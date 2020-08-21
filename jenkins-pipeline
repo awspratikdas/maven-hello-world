@@ -8,13 +8,11 @@ node() {
             
 	    }    
 	  
-	  stage("My Conditional Variable") {
-            environment {
+	  stage("2-If Loop"){
+	  
+	  environment {
                 w = "5" 
             }
-	}
-	  
-	  stage("2-If Loop"){
 	  
 	  if (env.w > z) {
                 echo 'The Build is a Stable'

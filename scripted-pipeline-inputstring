@@ -1,21 +1,22 @@
 properties([[$class: 'JiraProjectProperty'], gitLabConnection(''), [$class: 'GitlabLogoProperty', repositoryName: ''], giteeConnection(''), [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false], parameters([string(defaultValue: '3', description: '', name: 'StringA', trim: false), string(defaultValue: '4', description: '', name: 'StringB', trim: false)]), pipelineTriggers([githubPush()])])
 	 
 node(){
+
+	environment {
+                w = "5" 
+            }
+
 	  stage("1-Add two numbers") {
 		
 	echo "select the first number ${params.StringA}"
 	echo "select the second number ${params.StringB}"
-	z = ${params.StringA} + ${params.StringB};
+	z = ${StringA} + ${StringB};
 	
 	echo "${z}"
             
 	    }    
 	  
 	  stage("2-If Loop") {
-	  
-	  environment {
-                w = "5" 
-            }
 	  
 	  if (z > env.w) {
                 echo 'The Build is a Stable'

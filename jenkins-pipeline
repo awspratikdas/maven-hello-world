@@ -8,7 +8,7 @@ node() {
             
 	    }    
 	  
-	  stage("2-If Loop"){
+	  stage("2-If Loop") {
 	  
 	  environment {
                 w = "5" 

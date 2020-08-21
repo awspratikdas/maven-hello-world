@@ -19,7 +19,7 @@ node(){
 	  stage("2-If Loop") {
 	  
 	  environment {
-                def w = 5 	
+                def w = 5;	
                       }
 	  
 	  if (z > w) {

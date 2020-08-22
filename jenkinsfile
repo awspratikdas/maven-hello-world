@@ -1,0 +1,13 @@
+node () {
+    stage ("scm checkout") {
+    checkout changelog: false, poll: false, scm: [$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[url: 'https://ram_kannan@bitbucket.org/ram_kannan/maven-hello-world.git']]]
+    }
+    
+stage ("mvn build") {
+    sh "mvn clean package"
+    }
+    
+    stage ("Run java") {
+        sh "java -cp target/hello.jar com.example.hello.Hello"
+        }    
+    }

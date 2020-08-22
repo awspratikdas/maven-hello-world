@@ -6,7 +6,7 @@ This repository contains very trivial program on Java. To build and run this pro
 ```console
 $ mvn package
 $ java -cp target/hello.jar com.example.hello.Hello
-Hello, world!
+Hello, to my world!
 Welcome to DEVOPS
 ```
 

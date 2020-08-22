@@ -8,9 +8,9 @@ node(){
 	echo "select the second number ${params.string-B}"
 	echo "select the third number ${params.string-C}"
 	
-	def x = "${params.StringA}";
-	def y = "${params.StringB}";
-	
+	def x = "${params.string-A}";
+	def y = "${params.string-B}";
+		
 	z = x.toInteger() + y.toInteger();
 	
 	echo "${z}"

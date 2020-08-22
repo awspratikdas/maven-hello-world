@@ -1,11 +1,12 @@
-properties([[$class: 'JiraProjectProperty'], gitLabConnection(''), [$class: 'GitlabLogoProperty', repositoryName: ''], giteeConnection(''), [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false], parameters([string(defaultValue: '3', description: '', name: 'StringA', trim: false), string(defaultValue: '4', description: '', name: 'StringB', trim: false)]), pipelineTriggers([githubPush()])])
+properties([[$class: 'JiraProjectProperty'], gitLabConnection(''), [$class: 'GitlabLogoProperty', repositoryName: ''], giteeConnection(''), [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false], parameters([string(defaultValue: '3', description: '', name: 'string-A', trim: false), string(defaultValue: '2', description: '', name: 'string-B', trim: false), string(defaultValue: '5', description: '', name: 'string-C', trim: false)]), pipelineTriggers([githubPush()])])
 	 
 node(){
 
 	stage("1-Add two numbers") {
 		
-	echo "select the first number ${params.StringA}"
-	echo "select the second number ${params.StringB}"
+	echo "select the first number ${params.string-A}"
+	echo "select the second number ${params.string-B}"
+	echo "select the third number ${params.string-C}"
 	
 	def x = "${params.StringA}";
 	def y = "${params.StringB}";
@@ -18,7 +19,7 @@ node(){
 	  
 	  stage("2-If Loop") {
 	  
-	    if (z > 5) {
+	    if (z > "${params.string-C}".toInteger()) {
                 echo 'The Build is a Stable'
             } else {
                 echo 'The Build is UnStable'

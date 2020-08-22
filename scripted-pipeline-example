@@ -28,8 +28,9 @@ node('master'){
                      
      stage ("Four") {
      
-     println("Hello-World")
-     echo "Hello World!"
+     echo "${params.input}"
+     println("Hello-World to my friends")
+     echo "Hello World to Hope Tutors!"
                     
                     }
      

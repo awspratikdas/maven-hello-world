@@ -20,7 +20,7 @@ node('master'){
 	  
 	  stage("2-Check Condition") {
 	  
-	    if (w > 5) {
+	    if (w > z.toInteger()) {
                 echo 'The Build is a Stable'
             } else {
                 echo 'The Build is UnStable'

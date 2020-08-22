@@ -1,4 +1,6 @@
-node(){
+properties([[$class: 'JiraProjectProperty'], gitLabConnection(''), [$class: 'GitlabLogoProperty', repositoryName: ''], giteeConnection(''), [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false], parameters([string(defaultValue: 'Hello World !!', description: '', name: 'Input', trim: false)]), pipelineTriggers([githubPush()])])
+
+node('master'){
 
     stage ("One") {
     
@@ -23,5 +25,12 @@ node(){
      sh "ls -al"
      
                      }
+                     
+     stage ("Four") {
+     
+     println("Hello-World")
+     echo "Hello World!"
+                    
+                    }
      
       }

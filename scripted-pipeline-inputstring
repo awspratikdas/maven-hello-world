@@ -1,6 +1,6 @@
 properties([[$class: 'JiraProjectProperty'], gitLabConnection(''), [$class: 'GitlabLogoProperty', repositoryName: ''], giteeConnection(''), [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false], parameters([string(defaultValue: '3', description: '', name: 'string-A', trim: false), string(defaultValue: '2', description: '', name: 'string-B', trim: false), string(defaultValue: '5', description: '', name: 'string-C', trim: false)]), pipelineTriggers([githubPush()])])
 	 
-node(){
+node('master'){
 
 	stage("1-Add two numbers") {
 		
@@ -10,16 +10,17 @@ node(){
 	
 	def x = "${params.string-A}";
 	def y = "${params.string-B}";
+	def z = "${params.string-C}";
 		
-	z = x.toInteger() + y.toInteger();
+	w = x.toInteger() + y.toInteger();
 	
-	echo "${z}"
+	echo "${w}"
             
 	    }    
 	  
-	  stage("2-If Loop") {
+	  stage("2-Check Condition") {
 	  
-	    if (z > ${params.string-C}.toInteger()) {
+	    if (w > z.toInteger()) {
                 echo 'The Build is a Stable'
             } else {
                 echo 'The Build is UnStable'

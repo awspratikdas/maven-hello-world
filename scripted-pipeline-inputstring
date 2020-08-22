@@ -1,16 +1,16 @@
 properties([[$class: 'JiraProjectProperty'], gitLabConnection(''), [$class: 'GitlabLogoProperty', repositoryName: ''], giteeConnection(''), [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false], parameters([string(defaultValue: '3', description: '', name: 'first', trim: false), string(defaultValue: '2', description: '', name: 'second', trim: false), string(defaultValue: '5', description: '', name: 'third', trim: false)]), pipelineTriggers([githubPush()])])
-	 
+
 node('master'){
 
-	stage("1-Add two numbers") {
-		
-	echo "select the first number ${params.first}"
+        echo "select the first number ${params.first}"
 	echo "select the second number ${params.second}"
 	echo "select the third number ${params.third}"
 	
 	def x = "${params.first}";
 	def y = "${params.second}";
 	def z = "${params.third}";
+
+	stage("1-Add two numbers") {
 		
 	w = x.toInteger() + y.toInteger();
 	

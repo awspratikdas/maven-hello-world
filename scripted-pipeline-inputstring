@@ -1,16 +1,16 @@
-properties([[$class: 'JiraProjectProperty'], gitLabConnection(''), [$class: 'GitlabLogoProperty', repositoryName: ''], giteeConnection(''), [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false], parameters([string(defaultValue: '3', description: '', name: 'string-A', trim: false), string(defaultValue: '2', description: '', name: 'string-B', trim: false), string(defaultValue: '5', description: '', name: 'string-C', trim: false)]), pipelineTriggers([githubPush()])])
+properties([[$class: 'JiraProjectProperty'], gitLabConnection(''), [$class: 'GitlabLogoProperty', repositoryName: ''], giteeConnection(''), [$class: 'RebuildSettings', autoRebuild: false, rebuildDisabled: false], parameters([string(defaultValue: '3', description: '', name: 'first', trim: false), string(defaultValue: '2', description: '', name: 'second', trim: false), string(defaultValue: '5', description: '', name: 'third', trim: false)]), pipelineTriggers([githubPush()])])
 	 
 node('master'){
 
 	stage("1-Add two numbers") {
 		
-	echo "select the first number ${params.string-A}"
-	echo "select the second number ${params.string-B}"
-	echo "select the third number ${params.string-C}"
+	echo "select the first number ${params.first}"
+	echo "select the second number ${params.second}"
+	echo "select the third number ${params.third}"
 	
-	def x = "${params.string-A}";
-	def y = "${params.string-B}";
-	def z = "${params.string-C}";
+	def x = "${params.first}";
+	def y = "${params.second}";
+	def z = "${params.third}";
 		
 	w = x.toInteger() + y.toInteger();
 	

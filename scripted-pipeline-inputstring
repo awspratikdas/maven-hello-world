@@ -19,7 +19,7 @@ node(){
 	  
 	  stage("2-If Loop") {
 	  
-	    if (z > "${params.string-C}".toInteger()) {
+	    if (z > ${params.string-C}.toInteger()) {
                 echo 'The Build is a Stable'
             } else {
                 echo 'The Build is UnStable'
